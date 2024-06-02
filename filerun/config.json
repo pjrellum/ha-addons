@@ -1,0 +1,51 @@
+{
+    "arch": [
+      "aarch64",
+      "amd64"
+    ],
+    "description": "FileRun is a self-hosted Google Drive alternative.",
+    "environment": {
+      "PGID": "0",
+      "PUID": "0",
+      "FR_DB_HOST":"",
+      "FR_DB_PORT":"",
+      "FR_DB_NAME":"",
+      "FR_DB_USER":"",
+      "FR_DB_PASS":"",
+      "APACHE_RUN_USER":"www-data",
+      "APACHE_RUN_USER_ID": "33",
+      "APACHE_RUN_GROUP":"www-data",
+      "APACHE_RUN_GROUP_ID": "33"
+    },
+    "image": "filerun/filerun:8.1",
+    "map": [
+      "config:rw",
+      "share:rw",
+      "media:rw"
+    ],
+    "name": "FileRun",
+    "options": {
+      "PGID": 0,
+      "PUID": 0
+    },
+    "ports": {
+      "80/tcp": 8182
+    },
+    "ports_description": {
+      "80/tcp": "web interface"
+    },
+    "schema": {
+      "PGID": "int",
+      "PUID": "int",
+      "TZ": "str?",
+      "cifsdomain": "str?",
+      "cifspassword": "str?",
+      "cifsusername": "str?",
+      "localdisks": "str?",
+      "networkdisks": "str?"
+    },
+    "slug": "filerun",
+    "url": "https://github.com/pjrellum/ha-addons/tree/main/filerun",
+    "version": "0.0.1",
+    "webui": "http://[HOST]:[PORT:8182]"
+  }
